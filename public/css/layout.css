@@ -1,0 +1,57 @@
+.layout {
+  position: absolute;
+  overflow-x: hidden;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  transition: 0s;
+}
+.layout__wrapper {
+  margin: 0 -50%;
+}
+.layout__image {
+  margin: auto;
+  display: none;
+}
+@media screen and (max-width: 1140px) {
+  .layout__index_390 {
+    display: block;
+  }
+}
+@media screen and (min-width: 1140px) and (max-width: 1600px) {
+  .layout__index_1520 {
+    display: block;
+  }
+}
+@media screen and (min-width: 1601px) {
+  .layout__index_1920 {
+    display: block;
+  }
+}
+.layout__popup_1 {
+  display: block;
+}
+
+.bg-off {
+  background: none;
+}
+.bg-off:nth-of-type(n) {
+  background: none;
+}
+
+.on-top {
+  z-index: 10;
+}
+
+.hide {
+  display: none;
+}
+
+.negative {
+  filter: invert(1);
+  opacity: 0.5;
+}
+
+/*# sourceMappingURL=layout.css.map */

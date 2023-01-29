@@ -1,0 +1,63 @@
+@import "variables";
+.layout {
+  position: absolute;
+  overflow-x: hidden;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  transition: 0s;
+
+  &__wrapper {
+    margin: 0 -50%;
+  }
+
+  &__image {
+    margin: auto;
+    display: none
+  }
+
+  &__index_390 {
+    @media screen and (max-width: $desktop_1*1px) {
+      display: block;
+    }
+  }
+
+  &__index_1520 {
+    @media screen and (min-width: $desktop_1*1px) and (max-width: $desktop_2*1px) {
+      display: block;
+    }
+  }
+
+  &__index_1920 {
+    @media screen and (min-width: $desktop_2 + 1px) {
+      display: block;
+    }
+  }
+
+  &__popup_1 {
+    display: block;
+  }
+}
+
+.bg-off {
+  background: none;
+
+  &:nth-of-type(n) {
+    background: none;
+  }
+}
+
+.on-top {
+  z-index: 10;
+}
+
+.hide {
+  display: none;
+}
+
+.negative {
+  filter: invert(1);
+  opacity: 0.5;
+}
