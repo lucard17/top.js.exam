@@ -1,4 +1,5 @@
 @import "variables";
+
 :root {
   --color-white: #FCFCFC;
   --color-gray-6: #F2F2F2
@@ -13,6 +14,10 @@
 body {
   outline: 0;
 
+}
+
+.scroll-disabled {
+  overflow: hidden;
 }
 
 h2 {
@@ -39,7 +44,7 @@ p {
 }
 
 .container {
-  min-width: 320px;
+  min-width: 350px;
   max-width: 390px;
   min-height: 100%;
   margin: auto;
@@ -62,35 +67,103 @@ p {
 
 .button {
   border-radius: 5px;
+  font-size: 24px;
 
+  &:hover, &:target {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  @media (min-width: $desktop_1 * 1px) {
+    font-size: 36px;
+  }
 
   &_cta {
     text-transform: uppercase;
-    width: 300px;
     height: 60px;
     font-size: 24px;
     line-height: 28px;
     @media (min-width: $desktop_1 * 1px) {
-      font-size: 36px;
-      line-height: 42px;
-      width: 370px;
-      height: 82px;
-    }
-    @media (min-width: $desktop_2 * 1px) {
-      font-size: 36px;
-      line-height: 42px;
-      width: 362px;
       height: 75px;
+      font-size: 36px;
+      line-height: 42px;
     }
   }
 
   &_filled {
     background: #D75C78;
     filter: drop-shadow(0px 17px 12px rgba(0, 0, 0, 0.25));
+
+    &:hover {
+      background: #D75C78;
+      filter: drop-shadow(0px 17px 12px rgba(0, 0, 0, 0.25)) brightness(120%);
+    }
   }
 }
-.input{
+
+.input {
+  color: #000;
+  padding-left: 0.7em;
+  background: #F3F3F3;
+  box-shadow: inset 0 0 10px -1px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
+  font-weight: 700;
+  line-height: 42px;
+  display: block;
+  height: 36px;
+  font-size: 18px;
+  z-index: 1;
+  @media (min-width: $desktop_1 * 1px) {
+    font-size: 36px;
+    height: 75px;
+    box-shadow: inset 0 0 20px -1px rgba(0, 0, 0, 0.5);
+  }
+
+  &[class*=phone] {
+    color: #D8D8D8;
+  }
+
+  &[class*=phone]:focus,
+  &[class*=phone].visited {
+    color: #000000;
+    border-color: #FFFFFF;
+  }
+
+  &[class*=phone].valid,
+  &.valid {
+    background-color: #c8ffc3;
+  }
+
+  &.invalid {
+    color: #D75C78;
+    border-color: #D75C78;
+  }
+
+  &.invalid ~ &-tip {
+    margin-top: -15px;
+    @media (min-width: $desktop_1 * 1px) {
+      margin-top: -30px;
+    }
+  }
+
+  &:hover {
+    filter: drop-shadow(10px 17px 12px rgba(0, 0, 0, 0.25));
+  }
+
+  &-tip {
+    //display: none;
+    width: 100%;
+    font-size: 12px;
+    margin-top: -55px;
+    height: 0%;
+    margin-bottom: 19px;
+    overflow: hidden;
+    z-index: 0;
+    @media (min-width: $desktop_1 * 1px) {
+      font-size: 16px;
+      margin-top: -85px;
+      margin-bottom: 40px;
+    }
+  }
 
 }
 
@@ -161,7 +234,6 @@ p {
 }
 
 
-
 .cta-card {
   text-align: center;
   background-size: cover;
@@ -172,7 +244,7 @@ p {
   }
 
   &:first-of-type {
-    background-image: url("../images/card1.png");
+    background-image: url("../../public/images/card1.png");
     padding: 50px 50px 140px;
     @media (min-width: $desktop_1 * 1px) {
       padding: 50px 65px 45px;
@@ -180,7 +252,7 @@ p {
   }
 
   &:last-of-type {
-    background-image: url("../images/card2.png");
+    background-image: url("../../public/images/card2.png");
     padding: 70px 50px 130px;
     @media (min-width: $desktop_1 * 1px) {
       padding: 50px 55px 98px;
@@ -222,7 +294,9 @@ p {
   }
 }
 
-
+.hide {
+  display: none;
+}
 
 .sm-hide {
   @media (max-width: $desktop_1 * 1px) {
@@ -236,71 +310,5 @@ p {
   }
 }
 
-.layout {
-  position: absolute;
-  overflow-x: hidden;
-  pointer-events: none;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  transition: 0s;
 
-  &__wrapper {
-    margin: 0 -50%;
-  }
 
-  &__image {
-    margin: auto;
-    display: none
-  }
-
-  &__index_390 {
-    @media screen and (max-width: $desktop_1*1px) {
-      display: block;
-    }
-  }
-
-  &__index_1520 {
-    @media screen and (min-width: $desktop_1*1px) and (max-width: $desktop_2*1px) {
-      display: block;
-    }
-  }
-
-  &__index_1920 {
-    @media screen and (min-width: $desktop_2 + 1px) {
-      display: block;
-    }
-  }
-
-  &__popup_1 {
-    display: block;
-  }
-}
-
-.bg-off {
-  background: none;
-
-  &:nth-of-type(n) {
-    background: none;
-  }
-}
-
-.on-top {
-  z-index: 10;
-}
-
-.hide {
-  display: none;
-}
-
-.negative {
-  filter: invert(1);
-  opacity: 0.5;
-}
-
-.outline {
-  & * {
-    outline: 1px dashed blue;
-  }
-}

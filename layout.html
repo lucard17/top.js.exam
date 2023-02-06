@@ -1,0 +1,84 @@
+<div class="layout">
+    <!--    <div class="layout__wrapper">-->
+    <!--        <img src="layout/callmar_index_390.png" alt="" class="layout__image layout__index_390">-->
+    <!--    </div>-->
+    <!--    <div class="layout__wrapper">-->
+    <!--        <img src="layout/callmar_index_1520.png" alt="" class="layout__image layout__index_1520">-->
+    <!--    </div>-->
+    <!--    <div class="layout__wrapper">-->
+    <!--        <img src="layout/callmar_index_1920.png" alt="" class="layout__image layout__index_1920">-->
+    <!--    </div>-->
+    <!--    <div class="layout__wrapper">-->
+    <!--        <img src="layout/popup_questions_1.png" alt="" class="layout__image layout__popup_1">-->
+    <!--    </div>-->
+    <!--    <div class="layout__wrapper">-->
+    <!--        <img src="layout/popup_questions_2.png" alt="" class="layout__image layout__popup_2">-->
+    <!--    </div>-->
+    <!--    <div class="layout__wrapper">-->
+    <!--        <img src="layout/popup_reg_1920.png" alt=""-->
+    <!--             class="layout__image layout__popup_reg layout__1140 layout__1520 layout__1920">-->
+    <!--    </div>-->
+    <!--    <div class="layout__wrapper">-->
+    <!--        <img src="layout/popup_reg_390.png" alt="" class="layout__image layout__popup_reg layout__390">-->
+    <!--    </div>-->
+    <div class="layout__wrapper">
+        <img src="layout/popup_login_1920.png" alt=""
+             class="layout__image layout__popup_reg layout__1140 layout__1520 layout__1920">
+    </div>
+    <div class="layout__wrapper">
+        <img src="layout/popup_login_390.png" alt="" class="layout__image layout__popup_reg layout__390">
+    </div>
+
+</div>
+<script>
+    let layout = document.querySelector('.layout')
+    const keys = [
+        'layoutOnTop',
+        'layoutHide',
+        'layoutNegative',
+    ];
+    updateState()
+
+    function updateState() {
+        keys.forEach(item => {
+            if (sessionStorage.getItem(item) === 'true') {
+                layout.classList.add(item)
+            } else {
+                layout.classList.remove(item)
+            }
+
+        })
+        if (sessionStorage.getItem('outline') === 'true') {
+            document.body.classList.add('outline')
+        } else {
+            document.body.classList.remove('outline')
+        }
+
+    }
+
+    document.addEventListener('keydown', function (event) {
+        let key;
+        if (event.key === ']') {
+            key = 'layoutOnTop';
+        }
+        if (event.key === '[') {
+            key = 'layoutHide';
+        }
+        if (event.key === 'n') {
+            key = 'layoutNegative';
+        }
+        if (event.key === 'o') {
+            key = 'outline';
+        }
+        if (key !== undefined) {
+            if (sessionStorage.getItem(key) === 'true') {
+                sessionStorage.setItem(key, 'false')
+            } else {
+                sessionStorage.setItem(key, 'true')
+            }
+            updateState();
+        }
+    })
+
+
+</script>

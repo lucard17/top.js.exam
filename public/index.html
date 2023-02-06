@@ -13,22 +13,30 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/animation.css">
+
 </head>
 <body>
-<section class="main hide">
+<section class="main">
     <div class="container">
         <header class="header header__main">
             <img src="images/callmar_logo.svg" alt="logo" class="header__logo">
-            <button class="button header__button">Вход</button>
-            <button class="button header__button">Регистрация</button>
+            <div class="header__burger-popup hide">
+                <button class="button header__button button-login">Вход</button>
+                <button class="button header__button button-registration">Регистрация</button>
+            </div>
             <button class="header__burger"><img src="images/burger_icon.svg" alt=""></button>
+
+            <!--                <button class="button header__burger-button button-login">Вход</button>-->
+            <!--                <button class="button header__burger-button button-registration">Регистрация</button>-->
 
         </header>
         <img src="images/main.png" alt="" class="hero-img">
         <h2>Обратный звонок на сайт</h2>
         <p>Получайте в 3 раза больше звонков сразу после установки виджета на Ваш сайт<br>Сервис окупает свой годовой
             тариф в первую же неделю</p>
-        <button class="button button_cta button_filled main__button">подключить</button>
+        <button class="button button_cta button_filled main__button button-connect">подключить</button>
         <div>
             <img src="images/bubble.svg" alt="" class="bubble__main">
             <img src="images/bubble.svg" alt="" class="bubble__main">
@@ -39,7 +47,7 @@
         </div>
     </div>
 </section>
-<section class="second hide">
+<section class="second ">
     <div class="container">
         <div class="about">
             <h2 class="about__header about__header_top">Как работает виджет <br>обратного звонка</h2>
@@ -104,14 +112,14 @@
                     <h2 class="cta-card__header">Бесплатно<br class="sm-hide"> О руб.</h2>
                     <p class="cta-card__content">Тестовая версия на 14&nbsp;дней и 20&nbsp;руб. на балансе для проверки
                         качества связи</p>
-                    <button class="button button_cta cta-card__button">попробовать</button>
+                    <button class="button button_cta cta-card__button button-connect">попробовать</button>
                 </div>
                 <div class="cta-card">
                     <h2 class="cta-card__header">При оплате на <br>
                         1 год от 299 руб.</h2>
                     <p class="cta-card__content">Платите только за наш сервис, связь оплачивается по минимальной цене 4&nbsp;руб.
                         за минуту.</p>
-                    <button class="button button_cta cta-card__button">подключить</button>
+                    <button class="button button_cta cta-card__button button-connect">подключить</button>
                 </div>
             </div>
         </div>
@@ -127,90 +135,228 @@
         </div>
     </div>
 </section>
-<section class="popup popup-questions popup-questions-1">
-    <div class="popup__front">
-        <h2 class="popup__header">У Вас остались вопросы?</h2>
-        <p class="popup__content">Хотите, перезвоним вам за 27 секунд?</p>
-        <form class="questions__form" action="">
-            <input type="text" class="input input-phone">
-            <div class="button__wrap">
-                <button class="questions__button button button_filled">Жду звонка!</button>
-                <p class="button-comment">Звонок бесплатный</p>
-            </div>
-        </form>
-        <div class="popup__timer">
-            <img src="images/alarm_clock.svg" alt="">
-            <span class="popup__time">0:27,00</span>
+<section class="popup popup-questions hide">
+    <div class="popup__front popup-questions__front">
+        <button class="popup__button-close form-item"></button>
+        <div class="form-item">
+            <h2 class="popup-questions__header">У Вас остались вопросы?</h2>
         </div>
-        <span class="popup__comment">Виджет предоставлен Callmar.pro</span>
+        <div class="form-item">
+            <p class="popup-questions__content">Хотите, перезвоним вам за 27 секунд?</p>
+        </div>
+        <div class="form-item">
+            <form name='questions-form' method="post" class="popup__form popup-questions__form" action="" novalidate>
+                <input type="text" class="input input-phone popup-questions__input">
+                <div class="button__wrap">
+                    <button class="button button_cta button_filled popup-questions__button">Жду звонка!</button>
+                    <p class="popup-questions__button-comment">Звонок бесплатный</p>
+                </div>
+            </form>
+        </div>
+        <div class="form-item">
+            <div class="popup__timer">
+                <img class="popup__timer-image" src="images/alarm_clock.svg" alt="">
+                <span class="popup__time">0:27,00</span>
+            </div>
+        </div>
+        <div class="popup-questions__comment-wrap form-item">
+            <p class="popup-questions__comment">Виджет предоставлен Callmar.pro</p>
+        </div>
     </div>
 </section>
-<div class="layout">
-    <!--    <div class="layout__wrapper">-->
-    <!--        <img src="layout/callmar_index_390.png" alt="" class="layout__image layout__index_390">-->
-    <!--    </div>-->
-    <!--    <div class="layout__wrapper">-->
-    <!--        <img src="layout/callmar_index_1520.png" alt="" class="layout__image layout__index_1520">-->
-    <!--    </div>-->
-    <!--    <div class="layout__wrapper">-->
-    <!--        <img src="layout/callmar_index_1920.png" alt="" class="layout__image layout__index_1920">-->
-    <!--    </div>-->
-<!--    <div class="layout__wrapper">-->
-<!--        <img src="layout/popup_questions_1.png" alt="" class="layout__image layout__popup_1">-->
-<!--    </div>-->
-    <div class="layout__wrapper">
-        <img src="layout/popup_questions_2.png" alt="" class="layout__image layout__popup_2">
+<section class="popup popup-registration hide">
+    <div class="popup__front popup-registration__front">
+        <form name='registration-form' method="post" class="popup__form popup-registration__form" novalidate>
+
+            <button class="popup__button-close form-item"></button>
+
+            <div class="form-item">
+                <h2 class="popup__header">Регистрация</h2>
+                <p class="popup-registration__description">После регистрации вы получите:<br>10 минут связи - бесплатно
+                </p>
+            </div>
+            <div class="form-item">
+                <label class="popup__label">Ваш Email</label>
+                <input type="email" class="input popup__input registration__email">
+            </div>
+            <div class="form-item">
+                <label class="popup__label">Ваше имя</label>
+                <input type="text" class="input popup__input registration__name">
+            </div>
+            <div class="form-item">
+                <label class="popup__label">Адрес вашего сайта</label>
+                <input type="url" class="input popup__input registration__url">
+            </div>
+            <div class="form-item">
+                <label class="popup__label">Ваш телефон (на него будут поступать звонки с сайта)</label>
+                <input type="tel" class="input popup__input registration__phone">
+            </div>
+            <div class="form-item">
+                <label class="popup__label">Придумайте пароль</label>
+                <div class="popup__input-wrapper">
+                    <input type="password" class="input popup__input registration__password">
+                    <div class="input popup__input popup__input-eye-wrapper">
+                        <svg class="popup__input-eye">
+                            <use xlink:href="#eye"></use>
+                        </svg>
+                    </div>
+                    <p class="input-tip">Пароль должен состоять из: строчных и заглавных букв, цифр, символов.
+                        Минимальная длина
+                        - 8 символов. </p>
+                </div>
+            </div>
+            <div class="form-item">
+                <label class="popup__label">Повторите пароль</label>
+                <div class="popup__input-wrapper">
+                    <input type="password" class="input popup__input registration__password-repeat">
+                    <div class="input popup__input popup__input-eye-wrapper">
+                        <svg class="popup__input-eye">
+                            <use xlink:href="#eye"></use>
+                        </svg>
+                    </div>
+                    <p class="input-tip">Пароли не совпадают</p>
+                </div>
+            </div>
+            <div class="form-item">
+                <button class="popup-registration__button button button_cta button_filled ">Зарегистрироваться</button>
+            </div>
+
+
+        </form>
+
+
     </div>
-</div>
+</section>
+<section class="popup popup-login hide">
+    <div class="popup__front popup-login__front">
+        <button class="popup__button-close form-item"></button>
+        <form name='login-form' method="post" class="popup__form popup-login__form" novalidate>
+            <div class="form-item">
+                <h2 class="popup__header popup-login__header">Вход в личный кабинет</h2>
+            </div>
+            <div class="form-item">
+                <label class="popup__label">Ваш Email</label>
+                <input type="email" class="input popup__input login__email">
+            </div>
+            <div class="form-item">
+                <label class="popup__label">Пароль</label>
+                <div class="popup__input-wrapper">
+                    <input type="password" class="input popup__input login__password">
+                    <div class="input popup__input popup__input-eye-wrapper">
+                        <svg class="popup__input-eye">
+                            <use xlink:href="#eye"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="form-item">
+                <a href=" " class="popup-login__remember-link">Вспомнить пароль</a>
+            </div>
+            <div class="form-item">
+                <button class="popup-login__button button button_cta button_filled popup-login__button-singin">Войти
+                </button>
+            </div>
+            <div class="form-item">
+                <button class="popup-login__button button button_cta  popup-login__button-registration">Регистрация
+                </button>
 
-<!--<script src="js/cleave.min.js"></script>-->
-<!--<script src="js/cleave-phone.ru.js"></script>-->
+            </div>
+        </form>
+    </div>
+</section>
+
+<!--<div class="layout">-->
+<!--    <div class="layout__wrapper">-->
+<!--        <img src="../layout/callmar_index_390.png" alt="" class="layout__image layout__index_390">-->
+<!--    </div>-->
+<!--    <div class="layout__wrapper">-->
+<!--        <img src="../layout/callmar_index_1520.png" alt="" class="layout__image layout__index_1520">-->
+<!--    </div>-->
+<!--    <div class="layout__wrapper">-->
+<!--        <img src="../layout/callmar_index_1920.png" alt="" class="layout__image layout__index_1920">-->
+<!--    </div>-->
+<!--    <div class="layout__wrapper">-->
+<!--        <img src="../layout/popup_questions_1.png" alt="" class="layout__image layout__popup_1">-->
+<!--    </div>-->
+<!--    <div class="layout__wrapper">-->
+<!--        <img src="../layout/popup_questions_2.png" alt="" class="layout__image layout__popup_2">-->
+<!--    </div>-->
+<!--    <div class="layout__wrapper">-->
+<!--        <img src="layout/popup_reg_1920.png" alt=""-->
+<!--             class="../layout__image layout__popup_reg layout__1140 layout__1520 layout__1920">-->
+<!--    </div>-->
+<!--    <div class="layout__wrapper">-->
+<!--        <img src="../layout/popup_reg_390.png" alt="" class="layout__image layout__popup_reg layout__390">-->
+<!--    </div>-->
+<!--    <div class="layout__wrapper">-->
+<!--        <img src="layout/popup_login_1920.png" alt=""-->
+<!--             class="../layout__image layout__popup_reg layout__1140 layout__1520 layout__1920">-->
+<!--    </div>-->
+<!--    <div class="layout__wrapper">-->
+<!--        <img src="../layout/popup_login_390.png" alt="" class="layout__image layout__popup_reg layout__390">-->
+<!--    </div>-->
+
+<!--</div>-->
+<!--<script>-->
+<!--    let layout = document.querySelector('.layout')-->
+<!--    const keys = [-->
+<!--        'layoutOnTop',-->
+<!--        'layoutHide',-->
+<!--        'layoutNegative',-->
+<!--    ];-->
+<!--    updateState()-->
+
+<!--    function updateState() {-->
+<!--        keys.forEach(item => {-->
+<!--            if (sessionStorage.getItem(item) === 'true') {-->
+<!--                layout.classList.add(item)-->
+<!--            } else {-->
+<!--                layout.classList.remove(item)-->
+<!--            }-->
+
+<!--        })-->
+<!--        if (sessionStorage.getItem('outline') === 'true') {-->
+<!--            document.body.classList.add('outline')-->
+<!--        } else {-->
+<!--            document.body.classList.remove('outline')-->
+<!--        }-->
+
+<!--    }-->
+
+<!--    document.addEventListener('keydown', function (event) {-->
+<!--        let key;-->
+<!--        if (event.key === ']') {-->
+<!--            key = 'layoutOnTop';-->
+<!--        }-->
+<!--        if (event.key === '[') {-->
+<!--            key = 'layoutHide';-->
+<!--        }-->
+<!--        if (event.key === 'n') {-->
+<!--            key = 'layoutNegative';-->
+<!--        }-->
+<!--        if (event.key === 'o') {-->
+<!--            key = 'outline';-->
+<!--        }-->
+<!--        if (key !== undefined) {-->
+<!--            if (sessionStorage.getItem(key) === 'true') {-->
+<!--                sessionStorage.setItem(key, 'false')-->
+<!--            } else {-->
+<!--                sessionStorage.setItem(key, 'true')-->
+<!--            }-->
+<!--            updateState();-->
+<!--        }-->
+<!--    })-->
+<!--</script>-->
 <script src="js/imask.js"></script>
+<script src="js/index.js"></script>
 <script src="js/validation.js"></script>
-<script>
-    // document.querySelector('.main').classList.add('bg-off')
-    // document.querySelector('.video').classList.add('bg-off')
-    // document.querySelector('.second').classList.add('bg-off')
-    // document.querySelectorAll('.info-card').forEach(item => item.classList.add('bg-off'))
-    // document.querySelectorAll('.cta-card').forEach(item => item.classList.add('bg-off'))
 
-    // document.querySelector('.main').classList.add('bg-off')
-    let layout = document.querySelector('.layout')
-    // layout.classList.add('hide')
-    layout.classList.add('negative')
-    // layout.classList.add('on-top')
-    // document.addEventListener('click', function (event) {
-    //     event.target.classList.toggle('bg-off')
-    // })
-    document.addEventListener('keydown', function (event) {
-        // event.preventDefault()
-        // console.log(event)
-        if (event.key === ']') {
-            layout.classList.toggle('on-top')
-        }
-    })
-    document.addEventListener('keydown', function (event) {
-        // event.preventDefault()
-        // console.log(event)
-        if (event.key === '[') {
-            layout.classList.toggle('hide')
-        }
-    })
-
-    document.addEventListener('keydown', function (event) {
-        // event.preventDefault()
-        // console.log(event)
-        if (event.key === 'n') {
-            layout.classList.toggle('negative')
-        }
-    })
-    document.addEventListener('keydown', function (event) {
-        // event.preventDefault()
-        // console.log(event)
-        if (event.key === 'o') {
-            document.body.classList.toggle('outline')
-        }
-    })
-</script>
 </body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+    <symbol id="eye" viewBox="0 0 20 20">
+        <path fill="var(--color)"
+              d="M.2 10a11 11 0 0 1 19.6 0A11 11 0 0 1 .2 10zm9.8 4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+    </symbol>
+</svg>
+
 </html>

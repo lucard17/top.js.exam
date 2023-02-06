@@ -1,0 +1,31 @@
+.popup {
+  display: block;
+  top: 0;
+  transition: top 0.2s ease-in;
+
+  & .form-item {
+
+    transform: translateY(0);
+    opacity: 1;
+    transition: opacity 0.2s ease-in,
+    transform 0.3s ease-in;
+    @for $i from 1 through 8 {
+      &:nth-of-type(#{$i}){
+        transition-delay: 0.2s + 0.1s * ($i - 1);
+      }
+    }
+
+
+  }
+
+  &.hide {
+    display: block;
+    top: 100vh;
+    & .form-item {
+      transform: translateY(200px);
+      opacity: 0;
+      transition: opacity 0.3s 0s,
+      transform 0.3s 0s;
+    }
+  }
+}

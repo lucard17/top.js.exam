@@ -18,27 +18,30 @@
     display: none
   }
 
-  &__index_390 {
+  &__390 {
     @media screen and (max-width: $desktop_1*1px) {
       display: block;
     }
   }
-
-  &__index_1520 {
+  &__1140 {
     @media screen and (min-width: $desktop_1*1px) and (max-width: $desktop_2*1px) {
       display: block;
     }
   }
 
-  &__index_1920 {
-    @media screen and (min-width: $desktop_2 + 1px) {
+  &__1520 {
+    @media screen and (min-width: $desktop_2*1px) and (max-width: $desktop_3*1px) {
       display: block;
     }
   }
 
-  &__popup_1 {
-    display: block;
+  &__1920 {
+    @media screen and (min-width: $desktop_3 + 1px) {
+      display: block;
+    }
   }
+
+
 }
 
 .bg-off {
@@ -49,15 +52,20 @@
   }
 }
 
-.on-top {
+.layoutOnTop {
   z-index: 10;
 }
 
-.hide {
+.layoutHide {
   display: none;
 }
 
-.negative {
+.layoutNegative {
   filter: invert(1);
   opacity: 0.5;
+}
+.outline {
+  & * {
+    outline: 1px dashed blue;
+  }
 }

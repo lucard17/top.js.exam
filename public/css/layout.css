@@ -16,22 +16,24 @@
   display: none;
 }
 @media screen and (max-width: 1140px) {
-  .layout__index_390 {
+  .layout__390 {
     display: block;
   }
 }
-@media screen and (min-width: 1140px) and (max-width: 1600px) {
-  .layout__index_1520 {
+@media screen and (min-width: 1140px) and (max-width: 1540px) {
+  .layout__1140 {
     display: block;
   }
 }
-@media screen and (min-width: 1601px) {
-  .layout__index_1920 {
+@media screen and (min-width: 1540px) and (max-width: 1920px) {
+  .layout__1520 {
     display: block;
   }
 }
-.layout__popup_1 {
-  display: block;
+@media screen and (min-width: 1921px) {
+  .layout__1920 {
+    display: block;
+  }
 }
 
 .bg-off {
@@ -41,17 +43,21 @@
   background: none;
 }
 
-.on-top {
+.layoutOnTop {
   z-index: 10;
 }
 
-.hide {
+.layoutHide {
   display: none;
 }
 
-.negative {
+.layoutNegative {
   filter: invert(1);
   opacity: 0.5;
+}
+
+.outline * {
+  outline: 1px dashed blue;
 }
 
 /*# sourceMappingURL=layout.css.map */
